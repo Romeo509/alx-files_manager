@@ -4,7 +4,7 @@ const { promisify } = require('util');
 class RedisClient {
   constructor() {
     this.client = redis.createClient();
-    
+
     // Promisify Redis methods for async/await usage
     this.getAsync = promisify(this.client.get).bind(this.client);
     this.setexAsync = promisify(this.client.setex).bind(this.client);
